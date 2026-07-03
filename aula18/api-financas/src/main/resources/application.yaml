@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: api-financas
+  profiles:
+    active: developer
+
+server:
+  port: 8083
+
