@@ -1,6 +1,6 @@
 package br.com.cotiinformatica.apifinancas.entities;
 
-import br.com.cotiinformatica.apifinancas.entities.enums.TipoMovimentacao;
+import br.com.cotiinformatica.apifinancas.enums.TipoMovimentacao;
 import jakarta.persistence.*;
 import lombok.Data;
 
