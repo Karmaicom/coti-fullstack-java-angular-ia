@@ -4,6 +4,9 @@ import br.com.cotiinformatica.apifinancas.dtos.CategoriaRequestDTO;
 import br.com.cotiinformatica.apifinancas.dtos.CategoriaResponseDTO;
 import br.com.cotiinformatica.apifinancas.exceptions.CriarException;
 import br.com.cotiinformatica.apifinancas.services.CategoriaService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +21,12 @@ public class CategoriaController {
 
     private final CategoriaService categoriaService;
 
+    @Operation(description = "Endpoint responsável por adicionar categoria")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Categoria criada com sucesso."),
+            @ApiResponse(responseCode = "400", description = "Falha na requisição"),
+            @ApiResponse(responseCode = "500", description = "Erro interno no servidor.")
+    })
     @PostMapping
     public ResponseEntity<CategoriaResponseDTO> atualizar(@RequestBody CategoriaRequestDTO request) {
         try {
