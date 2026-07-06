@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/v1/categorias")
+@RequestMapping("api/v1/categorias")
 public class CategoriaController {
 
     private final CategoriaService categoriaService;
@@ -27,7 +27,7 @@ public class CategoriaController {
             @ApiResponse(responseCode = "400", description = "Falha na requisição"),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor.")
     })
-    @PostMapping
+    @PostMapping("criar")
     public ResponseEntity<CategoriaResponseDTO> atualizar(@RequestBody CategoriaRequestDTO request) {
         try {
             var response = categoriaService.criar(request);
