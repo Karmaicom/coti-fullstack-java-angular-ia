@@ -1,4 +1,4 @@
-package br.com.cotiinformatica.apifinancas.entities.enums;
+package br.com.cotiinformatica.apifinancas.enums;
 
 public enum TipoMovimentacao {
     RECEITA,
